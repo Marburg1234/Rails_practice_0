@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2024_07_20_110523) do
   create_table "trips", force: :cascade do |t|
     t.string "name"
     t.text "explain"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
