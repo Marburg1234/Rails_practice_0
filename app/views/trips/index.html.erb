@@ -13,7 +13,7 @@
       <thead class="table-warning">
         <tr>
           <th>Image</th>
-          <th>Location</th>
+          <th>Title</th>
           <th>Address</th>
           <th>Explain</th>
           <th colspan="7"></th>
@@ -25,12 +25,21 @@
 
 <!--投稿した写真を表示させたい                           -->
 
-
+<!--1枚の画像を投稿できるようにする-->
           <td>
             <%= link_to trip_path(trip.id) do %>
               <%= image_tag trip.get_image, size: "100x100" %>
             <% end %>
             </td>
+
+<!--複数の画像を投稿できるようにしたい-->
+          <!--<td>-->
+          <!--  < if trip.images.attached? %>-->
+          <!--    < trip.images.each do |image| %>-->
+          <!--    <= image_tag image.variant(resize: '100x100') %>-->
+          <!--    < end %>-->
+          <!--  < end %>-->
+          <!--</td>-->
 <!--                                                     -->
 
           <td><%= trip.title %></td>
