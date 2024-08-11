@@ -12,18 +12,31 @@
     <table class="table table-striped table-bordered border-primary">
       <thead class="table-warning">
         <tr>
-          <th>location</th>
-          <th>explain</th>
+          <th>Image</th>
+          <th>Location</th>
+          <th>Address</th>
+          <th>Explain</th>
           <th colspan="7"></th>
         </tr>
       </thead>
       <tbody>
         <% @trips.each do |trip| %>
         <tr>
-          <td><%= trip.name %></td>
+
+<!--投稿した写真を表示させたい                           -->
+
+
+          <td>
+            <%= link_to trip_path(trip.id) do %>
+              <%= image_tag trip.get_image, size: "100x100" %>
+            <% end %>
+            </td>
+<!--                                                     -->
+
+          <td><%= trip.title %></td>
+          <td><%= trip.address%></td>
           <td><%= trip.explain %></td>
           <td colspan="4"></td>
-          <td><%= link_to "Show", trip_path(trip.id), class: 'btn btn-info text-light' %></td>
           <td><%= link_to "Edit", edit_trip_path(trip.id), class: 'btn btn-success text-light' %></td>
           <td><%= link_to "Destroy", trip_path(trip.id), method: :delete, class: 'btn btn-danger text-light' %></td>
         </tr>
