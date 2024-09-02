@@ -8,21 +8,23 @@
 
       <div class="form-group">
         <h4>Photo</h4>
-        <%= f.file_field :image, multiple: true, accept: "image/*" %>
+        <%= f.file_field :image, accept: "image/*" %>
       </div>
 
-      <div class="form-group">
-        <strong><%= f.label :title %></strong>
-        <%= f.text_field :title, local: true, class: 'form-control' %>
-      </div>
       <div class="form-group">
         <strong><%= f.label :address %></strong>
         <%= f.text_field :address, class: 'form-control' %>
       </div>
       <div class="form-group">
+        <strong><%= f.label :title %></strong>
+        <%= f.text_field :title, local: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
         <strong><%= f.label :explain  %></strong>
         <%= f.text_area :explain, class: 'form-control' %>
       </div>
+
       <div class="form-group">
         <%= f.submit "投稿する", class: 'btn btn-info text-light' %>
       </div>
